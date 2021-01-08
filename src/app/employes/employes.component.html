@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="card shadow mb-4">
+        <div class="card-body">
+          <table class="table table-striped" >
+              <thead>
+               <tr>
+                  <th>Id</th>
+                  <th>Nom</th>
+                  <th>numTel</th>
+                  <th>dateNaissance</th>
+
+                </tr>
+            </thead>
+            <tbody *ngFor="let employee of employes">
+                <tr>
+                  <td>{{employee.idEmployee}}</td>
+
+                  <td>{{employee.nomEmployee}}</td>
+                  
+                  <td>{{employee.numTel}}</td>
+
+                  <td>{{employee.dateNaissance | date:'dd/MM/yyyy'}}</td>
+                  <td><a class="btn btn-danger" (click)="supprimerEmployee(employee)">Supprimer</a></td>
+                  <td><a class="btn btn-success" [routerLink]="['/updateEmployee',employee.idEmployee]">Modifier</a></td>
+
+                </tr>
+
+            </tbody>
+
+          </table>
+        </div>
+    </div>
+</div>
